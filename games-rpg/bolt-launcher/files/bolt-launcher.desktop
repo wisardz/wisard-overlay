@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Bolt-launcher
+Comment=OSRS launcher with support for jagex accounts
+Exec=/usr/bin/bolt
+Icon=bolt
+Terminal=false
+Categories=Game
+Keywords=osrs;Runescape;Runelite;bolt;bolt-launcher
