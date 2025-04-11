@@ -23,7 +23,6 @@ LICENSE="AGPL-3"
 
 SLOT="0"
 
-
 KEYWORDS="~amd64 ~x86"
 
 RESTRICT=""
@@ -50,11 +49,18 @@ src_unpack() {
 	tar -xf "${DISTDIR}/hashmap-f5b39e9.tar.gz" -C "${S}/Bolt-${PV}/modules/hashmap" --strip-components=1
 	tar -xf "${DISTDIR}/spng-adc9439.tar.gz" -C "${S}/Bolt-${PV}/modules/spng" --strip-components=1
 
-
 }
 
 src_compile(){
-	cmake -S Bolt-${PV} -B build -G "Unix Makefiles" -D CMAKE_BUILD_TYPE=Release -D CEF_ROOT="${S}"/cef_binary_114.2.11+g87c8807+chromium-114.0.5735.134_linux64_minimal -D CMAKE_INSTALL_PREFIX="/" -D BOLT_BINDIR=usr/bin -D BOLT_LIBDIR=usr/lib -D BOLT_SHAREDIR=usr/share -D BOLT_META_NAME="${MY_PN}" -D BOLT_SKIP_LIBRARIES=1
+	cmake -S Bolt-${PV} -B build -G "Unix Makefiles" \
+	-D CMAKE_BUILD_TYPE=Release \
+	-D CEF_ROOT="${S}"cef_binary_126.2.19+ga5d51ba+chromium-126.0.6478.183_linux64_minimal" \
+	-D CMAKE_INSTALL_PREFIX="/" \
+	-D BOLT_BINDIR=usr/bin \
+	-D BOLT_LIBDIR=usr/lib \
+	-D BOLT_SHAREDIR=usr/share \
+	-D BOLT_META_NAME="${MY_PN}" \
+	-D BOLT_SKIP_LIBRARIES=1
 	cmake --build build
 }
 
