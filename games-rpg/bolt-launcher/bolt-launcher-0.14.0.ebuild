@@ -54,7 +54,7 @@ src_unpack() {
 src_compile(){
 	cmake -S Bolt-${PV} -B build -G "Unix Makefiles" \
 	-D CMAKE_BUILD_TYPE=Release \
-	-D CEF_ROOT="${S}"cef_binary_126.2.19+ga5d51ba+chromium-126.0.6478.183_linux64_minimal" \
+	-D CEF_ROOT="${S}"/cef_binary_126.2.19+ga5d51ba+chromium-126.0.6478.183_linux64_minimal" \
 	-D CMAKE_INSTALL_PREFIX="/" \
 	-D BOLT_BINDIR=usr/bin \
 	-D BOLT_LIBDIR=usr/lib \
