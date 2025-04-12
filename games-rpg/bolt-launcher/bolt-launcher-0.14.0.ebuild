@@ -40,6 +40,7 @@ dev-libs/nss
 dev-ml/fmt
 sys-apps/dbus
 media-libs/alsa-lib
+dev-java/openjdk
 "
 
 src_unpack() {
