@@ -15,9 +15,14 @@ This overlay contains ebuilds that I personally maintain or copied from other ov
 > [solarbaron-overlay](https://github.com/solarbaron/solarbaron-overlay/tree/main)
 
 ## how to use this overlay?
-Since I don't have the overlay listed under the [gentoo overlays](https://repos.gentoo.org/), you have to manually add it in your repos.conf.
+Since I don't have the overlay listed under the [gentoo overlays](https://repos.gentoo.org/), you can run the follow commands:
+
+>emerge --ask app-eselect/eselect-repository\
+>eselect repository add wisard git https://git.wisard.me/wisard/wisard-overlay.git
+
+manually adding it: (/etc/portage/repos.conf/eselect-repo.conf):
 
 > [wisard]\
 > location = /var/db/repos/wisard\
 > sync-type = git\
-> sync-uri = https://git.wisard.me/wisard/wisard-overlay.git 
+> sync-uri = https://git.wisard.me/wisard/wisard-overlay.git
